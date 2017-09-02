@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Pinterest</title>
+</head>
+<body>
+    <nav class="Menu">
+        <a class="Brand" href="{% url "Pin:pin_list" %}">
+            <p>Pinclone</p>
+        </a>
+        <ul class="Menu-list">
+            
+            {% if user.is_authenticated %}
+                 <li class="Menu-item">
+                    Hello {{ user.username }}
+                </li>
+                <li class="Menu-item">
+                    <a href="{% url "Pin:pin_add" %}">New pin</a>
+                </li>  
+                <li class="Menu-item">
+                    <a href="{% url "Profile:logout" %}">Log out</a>
+                </li>               
+            {% else %}
+            <li class="Menu-item">
+                <a href="{% url "Profile:sign_up" %}">Sign Up</a>
+            </li>
+            <li class="Menu-item">
+                <a href="{% url "Profile:login" %}">Log in</a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% block content %}
+        
+    {% endblock content %}
+</body>
+</html>

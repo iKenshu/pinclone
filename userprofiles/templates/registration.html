@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form class='Pin-form' enctype="multipart/form-data" action="" method="POST">
+    <h1 class="Form-title">Register</h1>
+    {% csrf_token %}
+    
+    {% for field in form  %}
+        <label class="Pin-form--label" for="{{ field.name }}">{{ field.label}}</label>
+        {{ field }}
+    {% endfor %}
+    <input type="submit" class="Pin-form--btn">
+</form>
+
+{% endblock content %}
+

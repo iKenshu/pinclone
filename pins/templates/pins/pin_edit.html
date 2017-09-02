@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Add Pin</h1>
+<section class="Pin">
+    <article class="Pin-container">
+        <figure class="Pin-item"></figure>
+            <img class="Pin-image" src="{{ pin.image.url }}" alt="">
+            <figcaption class="Pin-user"> 
+                {{ pin.user.username}}
+            </figcaption>
+        </figure>
+    </article>
+</section>
+
+<form enctype="multipart/form-data" action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">
+</form>
+
+{% endblock content %}

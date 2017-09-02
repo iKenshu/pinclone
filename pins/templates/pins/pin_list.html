@@ -1,0 +1,26 @@
+{% extends "../base.html" %}
+
+{% block content %}
+
+<section class="Pin">
+
+    {% for pin in object_list %}
+        <article class="Pin-container">
+            <figure class="Pin-item">
+                <a href="{% url "Pin:pin_detail" pin.id %}">
+                    <img class="Pin-image" src="{{ pin.image.url }}" alt="">
+                </a>
+                <figcaption class="Pin-user"> 
+                    {{ pin.user.username}}
+                    {% if user.is_authenticated %}
+                        <div class="Pin-btns">
+                            <a class="btn-like icon-heart" href=""></a>
+                        </div>
+                    {% endif %} 
+                </figcaption>
+            </figure>
+        </article>
+    {% endfor %}
+</section>
+
+{% endblock content %}

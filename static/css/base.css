@@ -1,0 +1,160 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?q9bb8f');
+  src:  url('../fonts/icomoon.eot?q9bb8f#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?q9bb8f') format('truetype'),
+    url('../fonts/icomoon.woff?q9bb8f') format('woff'),
+    url('../fonts/icomoon.svg?q9bb8f#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-pencil:before {
+  content: "\e905";
+}
+.icon-bin:before {
+  content: "\e9ac";
+}
+.icon-heart:before {
+  content: "\e9da";
+}
+
+a{
+    text-decoration: none;
+}
+
+.Menu{
+    padding: .3em;
+    background: #f1f0f0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Menu-list{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 1em;
+}
+
+.Menu-item{
+    text-decoration: none;
+    list-style: none;
+    padding: 0 1em;
+}
+
+.Brand{
+    margin-left: 1em;
+    font-weight: 700;
+    color: red;
+}
+
+.Pin{
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    /*width: 80%;*/
+    margin: 1em auto;
+    align-items: flex-start;
+}
+
+.Pin-container{
+    background: #f1f0f0;
+    border-radius: 5px;
+    margin: 1em;
+    box-shadow: 3px 3px 20px #afacac;
+}
+
+.Pin-item{
+    margin: 0;
+}
+
+.Pin-image{
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.Pin-image--detail{
+    width: 100%
+}
+
+.Pin-user{
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Pin-btns{
+    color: white;
+}
+
+.Form-title{
+    border-bottom: 5px solid white;
+    padding: .3em 0;
+}
+
+.Pin-form{
+    background: #f1f0f0;
+    margin: 2em auto;
+    width: 50%;
+    padding: 1em;
+    border-radius: 5px;
+}
+
+.Pin-form--label{
+    display: block;
+}
+
+.Pin-form--input{
+    border: 0;
+    padding: .5em;
+    margin: 1em 0;
+}
+
+.Pin-form--file{
+    border: 0;
+    display: block;
+}
+
+.Pin-form--btn{
+    background: #449cf7;
+    padding: 1em;
+    margin: 1em 0;
+    border: none;
+    color: white;
+    display: block;
+}
+
+.btn-delete{
+    padding: .5em;
+    background: #ec0909;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 1px 1px 1px #afacac;
+}
+
+.btn-edit{
+    padding: .5em;
+    background: #ec0909;
+    border-radius: 5px;
+    color: white;
+    box-shadow: 1px 1px 1px #afacac;
+}
+
+.btn-like{
+    color: black;
+}
