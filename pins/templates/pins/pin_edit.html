@@ -2,7 +2,6 @@
 
 {% block content %}
 
-<h1>Add Pin</h1>
 <section class="Pin">
     <article class="Pin-container">
         <figure class="Pin-item"></figure>
@@ -15,6 +14,7 @@
 </section>
 
 <form class='Pin-form' enctype="multipart/form-data" action="" method="POST">
+    <h1 class="Form-title">Add Pin</h1>
     {% csrf_token %}
 
     {% for field in form  %}
