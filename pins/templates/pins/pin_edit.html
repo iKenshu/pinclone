@@ -14,10 +14,15 @@
     </article>
 </section>
 
-<form enctype="multipart/form-data" action="" method="POST">
+<form class='Pin-form' enctype="multipart/form-data" action="" method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit">
+
+    {% for field in form  %}
+        <label class="Pin-form--label" for="{{ field.name }}">{{ field.label}}</label>
+        {{ field }}
+    {% endfor %}
+    <input type="submit" class="Pin-form--btn">
+
 </form>
 
 {% endblock content %}
