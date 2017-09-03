@@ -1,5 +1,4 @@
 db.sqlite3
 pinclone/local_settings.py
-/media
 *.pyc
 *.pyo
