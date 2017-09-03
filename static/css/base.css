@@ -30,9 +30,6 @@
 .icon-bin:before {
   content: "\e9ac";
 }
-.icon-heart:before {
-  content: "\e9da";
-}
 
 a{
     text-decoration: none;
