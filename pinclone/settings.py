@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-o(q0s-b!t*ekip4&g%z#37xiw+zbxv4lj_z&!hhs)w=dbv@60'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['pinterest-clone.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 # Login URLs redirects
 LOGIN_REDIRECT_URL = '/'
