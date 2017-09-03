@@ -3,4 +3,3 @@ pinclone/local_settings.py
 /media
 *.pyc
 *.pyo
-/static
