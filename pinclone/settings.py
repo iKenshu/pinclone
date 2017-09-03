@@ -25,7 +25,7 @@ SECRET_KEY = '-o(q0s-b!t*ekip4&g%z#37xiw+zbxv4lj_z&!hhs)w=dbv@60'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pinterest-clone.herokuapp.com']
 
 # Login URLs redirects
 LOGIN_REDIRECT_URL = '/'
@@ -54,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'pinclone.urls'
@@ -75,17 +76,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'pinclone.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Password validation
@@ -129,3 +119,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+try:
+    from .local_settings.py import *
+except ImportError:
+    pass
+
+# Database
+# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+
+import dj_database_url
+DATABASES = {'default': dj_database_url.config()}
