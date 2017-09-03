@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-o(q0s-b!t*ekip4&g%z#37xiw+zbxv4lj_z&!hhs)w=dbv@60'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -121,7 +121,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 try:
-    from .local_settings.py import *
+    from .local_settings import *
 except ImportError:
     pass
 
