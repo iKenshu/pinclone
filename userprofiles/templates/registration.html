@@ -6,6 +6,8 @@
     <h1 class="Form-title">Register</h1>
     {% csrf_token %}
     
+    {{ form.errors }}
+
     {% for field in form  %}
         <label class="Pin-form--label" for="{{ field.name }}">{{ field.label}}</label>
         {{ field }}
