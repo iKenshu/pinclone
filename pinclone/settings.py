@@ -23,9 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-o(q0s-b!t*ekip4&g%z#37xiw+zbxv4lj_z&!hhs)w=dbv@60'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = ['*']
 
 # Login URLs redirects
 LOGIN_REDIRECT_URL = '/'
@@ -120,13 +118,18 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 import dj_database_url
 DATABASES = {'default': dj_database_url.config()}
+
+DEBUG = False
+
+ALLOWED_HOSTS = ['*']
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
