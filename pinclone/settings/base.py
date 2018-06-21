@@ -20,10 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '-o(q0s-b!t*ekip4&g%z#37xiw+zbxv4lj_z&!hhs)w=dbv@60'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 ALLOWED_HOSTS = ['*']
 
@@ -42,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'pins',
     'userprofiles',
 ]
@@ -120,13 +118,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
-import dj_database_url
-DATABASES = {'default': dj_database_url.config()}
