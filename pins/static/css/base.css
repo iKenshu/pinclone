@@ -64,19 +64,31 @@ a{
 }
 
 .Pin{
-    display: flex;
-    justify-content: space-around;
-    flex-flow: row wrap;
-    /*width: 80%;*/
-    margin: 1em auto;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    grid-gap: 5px;
+    /* grid-template: repeat(1, 1fr) / repeat(3, 1fr); */
+    grid-area: pins;
+    justify-content: center;
+    grid-auto-flow: row;
 }
 
+.Pin:nth-child(3n+1) {
+    grid-column: 1;
+}
+.Pin:nth-child(3n+2) {
+    grid-column: 2;
+}
+.Pin:nth-child(3n) {
+    grid-column: 3;
+}
 .Pin-container{
-    background: #f1f0f0;
+    background: #f2f2f2;
     border-radius: 5px;
-    margin: 1em;
     box-shadow: 3px 3px 20px #afacac;
+    border-radius: 5px;
+    padding: 10px;
+    overflow: hidden;
 }
 
 .Pin-item{
@@ -84,8 +96,7 @@ a{
 }
 
 .Pin-image{
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 100%;
 }
 
 .Pin-image--detail{
