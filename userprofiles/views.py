@@ -3,7 +3,7 @@ from django.contrib.auth import login, authenticate
 from django.views.generic import CreateView
 from django.contrib.auth.views import LoginView, LogoutView
 
-from .forms import SignUpForm
+from .forms import SignUpForm, LogInForm
 from .models import Profile
 
 # Create your views here.
@@ -25,6 +25,7 @@ class SignUpView(CreateView):
 
 class LogInView(LoginView):
     template_name = 'login.html'
+    authentication_form = LogInForm
 
 
 class LogOutView(LogoutView):

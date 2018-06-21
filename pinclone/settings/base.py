@@ -22,8 +22,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-ALLOWED_HOSTS = ['*']
-
 # Login URLs redirects
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login'
@@ -117,6 +115,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases

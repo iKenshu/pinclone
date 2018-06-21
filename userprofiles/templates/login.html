@@ -6,10 +6,15 @@
     <h1 class="Form-title">Log in</h1>
     {% csrf_token %}
     
-    {{ form.errors }}
-    {{ form.non_field_errors }}
-    
     {% for field in form  %}
+
+        {% if field.errors %}
+            {% for error in field.errors %}
+                {{ error }}
+            {% endfor %}
+            
+        {% endif %}
+
         <label class="Pin-form--label" for="{{ field.name }}">{{ field.label}}</label>
         {{ field }}
     {% endfor %}
