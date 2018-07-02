@@ -65,12 +65,13 @@ a{
 
 .Pin{
     display: grid;
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, 250px);
     /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
-    grid-gap: 5px;
+    grid-gap: 20px;
     /* grid-template: repeat(1, 1fr) / repeat(3, 1fr); */
     grid-area: pins;
     justify-content: center;
+    margin-top: 1em;
 }
 
 .Pin-detail {
@@ -90,8 +91,7 @@ a{
 .Pin-container{
     background: #f2f2f2;
     border-radius: 5px;
-    box-shadow: 3px 3px 20px #afacac;
-    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.5);
     padding: 10px;
     overflow: hidden;
 }
