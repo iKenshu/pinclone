@@ -3,23 +3,21 @@
 {% block content %}
     
 
-    <section class="Pin">
-                
-            <article class="Pin-container">
-                <figure class="Pin-item"></figure>
-                    <img class='Pin-image--detail' src="{{ pin.image.url }}" alt="">
-                    <figcaption class="Pin-user"> 
-                        {{ pin.user.username}}
-                        {% if user.is_authenticated %}
-                            <div class="Pin-btns">
-                                <a class="btn-edit icon-pencil" href="{% url "Pin:pin_edit" pin.id %}"> Edit</a>
-                                <a class="btn-delete icon-bin" href="{% url "Pin:pin_delete" pin.id %}"> Delete</a>
-                            </div>
-                        {% endif %}
-                    </figcaption>
-                </figure>
-            </article>
-
+    <section class="Pin-detail">
+        <article class="Pin-container">
+            <figure class="Pin-item"></figure>
+                <img class='Pin-image--detail' src="{{ pin.image.url }}" alt="">
+                <figcaption class="Pin-user"> 
+                    {{ pin.user.username}}
+                    {% if user.is_authenticated %}
+                        <div class="Pin-btns">
+                            <a class="btn-edit icon-pencil" href="{% url "Pin:pin_edit" pin.id %}"> Edit</a>
+                            <a class="btn-delete icon-bin" href="{% url "Pin:pin_delete" pin.id %}"> Delete</a>
+                        </div>
+                    {% endif %}
+                </figcaption>
+            </figure>
+        </article>
     </section>
 
 {% endblock content %}
