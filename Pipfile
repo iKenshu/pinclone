@@ -10,7 +10,7 @@ python_version = "3.6"
 
 [packages]
 dj-database-url = "==0.4.2"
-django = "==1.11.4"
+django = "==1.11.15"
 gunicorn = "==19.7.1"
 olefile = "==0.44"
 "psycopg2" = "==2.7.3.1"
